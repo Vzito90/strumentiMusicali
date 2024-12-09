@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta charset="UTF-8">
+ <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ 
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<style>
+img {
+width: 5%;
+}
+.brand-logo img {
+    width: 15% !important; /* Imposta un'altezza per l'immagine */
+    vertical-align: top; /* Sposta l'immagine in alto */
+  }
+
+input[type="text"] {
+    width: 50% !important;
+  }
+hr{
+
+height: 5px; /* Adjusts the thickness */
+  background-color: red;
+  /*border: none;*/
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+    
+        <img src="https://images.vexels.com/media/users/3/145816/isolated/preview/7616b64374d1ecc318e9d638807c4d61-rock-music-sign-logo-by-vexels.png" 
+         class="brand-logo right" alt="Logo" />
+  
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/store">Store</a></li>
+        <li><a href="/gestore">Form</a></li>
+        <li><a href="/select">Select</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+       
+	<div class="container">
+		<form action= "/inserisci" method = "POST">
+		<h5>Inserisci il nome</h5>
+		<br>
+		<input type="text" name = "nome">
+		<br>
+		Inserisci marca
+		<br>
+		<input type="text" name = "marca">
+		<br>
+		Inserisci prezzo
+		<br>
+		<input type="text" name = "prezzo">
+		<br>
+		Inserisci url
+		<br>
+		<input type="text" name = "url">
+		<br>
+		
+		<input type = "submit">
+		</form>
+		<hr>
+		<br>
+		<form action = "/aggiornaPezzi" method = "POST">
+		<h5>Aggiorna pezzi disponibili</h5>
+		Inserisci il nome
+		<br>
+		<input type="text" name = "nome">
+		<br>
+		Inserisci quantità
+		<br>
+		<input type="number" name = "pezzi">
+		<br>
+		<input type="submit">
+		
+		</form>
+		<br>
+		<hr>
+		<form action = "/aggiornaPrezzo" method = "POST">
+		<h5>Aggiorna prezzo strumento</h5>
+		Inserisci il nome
+		<br>
+		<input type="text" name = "nome">
+		<br>
+		Inserisci nuovo prezzo
+		<br>
+		<input type="number" name = "prezzo">
+		<br>
+		<input type="submit">
+		
+		</form>
+		<br>
+		<hr>
+		<form action ="aggiornaUrl" method = "POST">
+		<h5>Aggiorna Url</h5>
+		Inserisci il nome
+		<br>
+		<input type="text" name = nome>
+		<br>
+		Inserisci l'url aggiornato
+		<br>
+		<input type="text" name = url>
+		<br>
+		<input type="submit" value = conferma>
+		<br>
+		</form>
+		<br>
+		<hr>

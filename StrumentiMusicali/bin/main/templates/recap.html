@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+
+<style>
+img {
+width: 5%;
+}
+.brand-logo img {
+    width: 15% !important; /* Imposta un'altezza per l'immagine */
+    vertical-align: top; /* Sposta l'immagine in alto */
+  }
+
+tr,
+td,
+th
+{
+text-align: center;
+}
+</style>
+</head>
+<body>
+   <nav>
+    <div class="nav-wrapper">
+    
+        <img src="https://images.vexels.com/media/users/3/145816/isolated/preview/7616b64374d1ecc318e9d638807c4d61-rock-music-sign-logo-by-vexels.png" 
+         class="brand-logo right" alt="Logo" />
+  
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/store">Store</a></li>
+        <li><a href="/gestore">Form</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+<h1>Recap dell'acquisto</h1>
+ 
+      <table>
+        <thead>
+          <tr>
+              <th>Nome</th>
+              <th>Marca</th>
+              <th>Prezzo</th>
+              <th>Immagine</th>
+              <th>Qnt</th>
+          </tr>
+        </thead>
+
+<tbody>
+  
+   <tr th:each="strumenti : ${lista}">
+    <td th:text="${strumenti.nome}"></td>
+    <td th:text="${strumenti.marca}"></td>
+    <td><span th:text="${strumenti.prezzo}"></span></td>
+    <td><img th:src="${strumenti.url}" /></td>
+    <td th:text="${strumenti.pezzi}"> </td>
+  </tr>
+  
+  
+</tbody>
+      </table>
+      
+      <h3>La somma da pagare è: <span th:text=${somma}></span> euro</h3>
+      
+      
+      
+      <a href="/store"><- Torna ad aggiungere prodotti</a>
+      </div>
+</body>
+</html>
