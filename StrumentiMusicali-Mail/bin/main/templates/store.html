@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <script>
+   
+   document.addEventListener('DOMContentLoaded', function() {
+	    var elems = document.querySelectorAll('select');
+	    var instances = M.FormSelect.init(elems);
+	  });   
+   </script>         
+
+<style>
+.strImg{
+	width: 35%
+}
+#imgLogo {
+    width: 5% !important;
+    vertical-align: top; 
+}
+
+
+.row{
+	display:inline-block;
+	}
+.col{
+	display:inline-block;
+	}
+	    table {
+  width: 100%;
+  table-layout: fixed; 
+  border-collapse: collapse; 
+}
+	
+</style>
+</head>
+<body>
+   <nav>
+    <div class="nav-wrapper">
+    
+        <img src="https://images.vexels.com/media/users/3/145816/isolated/preview/7616b64374d1ecc318e9d638807c4d61-rock-music-sign-logo-by-vexels.png" 
+         class="brand-logo right" alt="Logo" id="imgLogo"/>
+  
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/store">Store</a></li>
+        <li><a href="/gestore">Form</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+
+	<form action="/buy" method="POST">
+		<table id=tb>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Marca</th>
+					<th>Prezzo</th>
+					<th>Url</th>
+					<th>Seleziona</th>
+					
+				</tr>
+			</thead>
+			
+		<tbody>
+			<tr th:each="strumenti : ${listaS}">
+				<td th:text="${strumenti.nome}"></td>
+				<td th:text="${strumenti.marca}"></td>
+				<td th:text="${strumenti.prezzo}"></td>
+				<td><img th:src="${strumenti.url}" class=strImg></td>
+				<td><input type= "number" name = "selected" value = "0"></td>
+			</tr>
+		
+		</tbody>
+		</table>
+		  <h3>Scrivi la tua mail</h3>
+      <input type = "text" name = "mail" required>
+      <br>
+       <label for="testToken">Test Token:</label>
+        <select id="testToken" name="token" required>
+            <option value="tok_visa">Visa Test Card</option>
+            <option value="tok_mastercard">MasterCard Test Card</option>
+            <option value="tok_amex">American Express Test Card</option>
+        </select>
+      <input type="submit" value = "Compra">
+	
+
+
+</div>
+</body>
+</html>
