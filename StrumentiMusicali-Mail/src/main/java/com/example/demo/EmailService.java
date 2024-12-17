@@ -24,7 +24,7 @@ public class EmailService {
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true); {
         	 helper.setTo(to);
              helper.setSubject(subject);
-             helper.setFrom("vzito90@gmail.com");
+             helper.setFrom("");
 
              // Costruisci l'HTML con i CID per le immagini
              StringBuilder htmlContent = new StringBuilder("<html><body>");
